@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国内旅游出行指南</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+<div id="app">
+    <h1>欢迎使用国内旅游出行指南应用</h1>
+    <form id="travel-form">
+        <div class="form-group">
+            <label for="from_station">请输入您的出发地:</label>
+            <input type="text" id="from_station" placeholder="例如：上海" required>
+        </div>
+
+        <div class="form-group">
+            <label for="to_station">请输入您的目的地:</label>
+            <input type="text" id="to_station" placeholder="例如：北京" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departure">请输入出发日期 (YYYY-MM-DD):</label>
+            <input type="date" id="departure" required>
+        </div>
+
+        <div class="form-group">
+            <label for="back">请输入返回日期 (YYYY-MM-DD):</label>
+            <input type="date" id="back" required>
+        </div>
+
+        <button type="submit">开始制定计划</button>
+    </form>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>

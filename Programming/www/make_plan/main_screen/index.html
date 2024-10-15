@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出行方案制定</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- 引入 Font Awesome 图标库 -->
+    <!-- 引入和风天气图标字体 -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/qweather-icons@1.3.0/font/qweather-icons.css"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+<div id="app">
+    <div class="sidebar">
+        <h1>Step.3：</h1>
+        <h2>制定出行计划</h2>
+        <button onclick="navigate('hotel')">酒店预订</button>
+        <button onclick="navigate('food')">美食预订</button>
+        <button onclick="navigate('scenic')">景区出行预订</button>
+    </div>
+    <div class="calendar">
+        <h2>出行日历</h2>
+        <div class="calendar-controls">
+            <button id="prev-week">上一周</button>
+            <button id="next-week">下一周</button>
+        </div>
+        <!-- 新增的可滚动容器 -->
+        <div class="calendar-scroll">
+            <div id="calendar-grid"></div>
+        </div>
+    </div>
+    <!-- 添加天气详情气泡 -->
+    <div id="weather-popup" class="weather-popup" style="display: none;">
+        <div class="weather-popup-content">
+            <span id="close-popup" class="close-popup">&times;</span>
+            <h3 id="popup-date">日期</h3>
+            <p id="popup-weather">天气详情</p>
+        </div>
+    </div>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择酒店</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=Ix29D1qo8ztHgbWrSxvYXquhxucQGazN"></script>
+</head>
+<body>
+<div id="app">
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <div id="top-bar">
+        <button id="back-button">返回</button>
+        <button id="confirm-button" disabled>确认</button>
+    </div>
+    <h2>可选酒店列表</h2>
+    <ul id="hotel-list"></ul>
+    <div id="map-container" class="hidden">
+        <h3>酒店位置</h3>
+        <div id="map"></div>
+        <p id="hotel-location"></p>
+    </div>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>

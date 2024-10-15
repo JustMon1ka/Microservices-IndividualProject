@@ -1,0 +1,39 @@
+/* style.css */
+
+/* 防止内容被固定导航栏遮挡 */
+body {
+    padding-top: 70px; /* 根据导航栏高度调整 */
+}
+
+/* 加载蒙层样式 */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 确保蒙层在最上层 */
+}
+
+/* 成功消息样式 */
+#successMessage {
+    font-size: 1.2rem;
+}
+
+/* 表单样式 */
+#setParamsForm .form-label {
+    font-weight: bold;
+}
+
+/* 按钮样式 */
+#back-button {
+    /* 根据需要自定义样式 */
+}
+
+#confirm-button {
+    /* 根据需要自定义样式 */
+}

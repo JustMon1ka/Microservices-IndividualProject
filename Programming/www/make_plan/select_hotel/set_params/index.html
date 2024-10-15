@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置酒店预订参数</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+<div id="app">
+    <h2>填写预订参数</h2>
+    <form id="params-form">
+        <label for="country">城市：</label>
+        <input type="text" id="country" name="country" required><br>
+
+        <label for="checkInDate">入住日期：</label>
+        <input type="date" id="checkInDate" name="checkInDate" required><br>
+
+        <label for="checkOutDate">退房日期：</label>
+        <input type="date" id="checkOutDate" name="checkOutDate" required><br>
+
+        <label for="adultNum">成人人数：</label>
+        <input type="number" id="adultNum" name="adultNum" min="1" required><br>
+
+        <label for="childNum">儿童人数：</label>
+        <input type="number" id="childNum" name="childNum" min="0" required><br>
+
+        <label for="roomNum">房间数：</label>
+        <input type="number" id="roomNum" name="roomNum" min="1" required><br>
+
+        <button type="submit">提交</button>
+
+        <button id="back-btn">返回</button>
+    </form>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>

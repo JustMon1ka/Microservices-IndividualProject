@@ -1,0 +1,12 @@
+/* set_params.css */
+
+/* 调整表单布局 */
+#setParamsForm {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 成功消息的样式 */
+#successMessage {
+    text-align: center;
+}

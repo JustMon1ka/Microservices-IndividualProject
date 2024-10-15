@@ -1,0 +1,12 @@
+可以直接在本地部署项目示例：
+Step.1：
+进入 ./Programming/www 目录，输入指令：
+~/Programming/www$ python -m http.server 8080（或者其他自定义端口）
+即可开启前端网页服务，之后访问http://127.0.0.1:8080就可以看到网页
+
+Step.2：
+使用Python>=3.9运行 ./Programming/backstage.py 程序，开启网页的后端服务：
+~$ python ./Programming/backstage.py
+(注：运行前需要确保python环境中有程序所需的第三方库，安装指令：pip install flask flask_cors requests)
+
+之后即可访问http://127.0.0.1:8080开始使用网站

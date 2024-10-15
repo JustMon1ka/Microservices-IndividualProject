@@ -1,0 +1,142 @@
+/* show_food.css */
+
+/* 通用样式 */
+
+/* 设置美食卡片图片的高度一致 */
+.food-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 标签样式（菜系标签） */
+.tag {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+/* 评分星星颜色 */
+.star-rating .bi-star-fill {
+    color: #ffc107;
+}
+
+.star-rating .bi-star-half {
+    color: #ffc107;
+}
+
+.star-rating .bi-star {
+    color: #e4e5e9;
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+    .food-card img {
+        height: 150px;
+    }
+}
+
+/* 搜索栏样式 */
+#searchInput {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 无结果提示样式 */
+#no-results p {
+    font-size: 1.2rem;
+}
+
+/* 加载蒙层样式 */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* 确保蒙层在最上层 */
+}
+
+/* 确保固定顶部导航栏内容不被覆盖 */
+body {
+    padding-top: 70px; /* 根据导航栏高度调整 */
+}
+
+/* 详情视图样式 */
+
+/* 固定顶部横条 */
+.fixed-top {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 详情视图中的标签样式 */
+#detail-tags .badge {
+    margin-right: 5px;
+}
+
+/* 详情视图中的图片样式 */
+#detail-image {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    #detail-image {
+        height: 250px;
+    }
+}
+
+/* 按钮样式调整 */
+
+/* 确认按钮与返回按钮间距 */
+.fixed-top .btn {
+    margin-left: 10px;
+}
+
+/* 美食卡片悬停效果 */
+.food-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+}
+
+/* 过渡效果 */
+.food-card, .card {
+    transition: box-shadow 0.3s;
+}
+
+.food-card:hover, .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 收藏按钮样式 */
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* 确认按钮样式 */
+#confirm-button {
+    /* 根据需要自定义样式 */
+}
+
+/* 详情视图的描述文本样式 */
+#detail-description {
+    white-space: pre-wrap; /* 保留换行符 */
+}
+
+/* 防止内容被固定导航栏遮挡 */
+.details-content {
+    margin-top: 80px; /* 根据固定导航栏高度调整 */
+}

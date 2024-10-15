@@ -1,0 +1,248 @@
+/* 基本样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar h1, .sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.calendar {
+    flex-grow: 1;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#prev-week, #next-week {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#prev-week:disabled, #next-week:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 新增的可滚动容器样式 */
+.calendar-scroll {
+    flex-grow: 1;
+    overflow-y: auto; /* 使内部内容可滚动 */
+    position: relative;
+}
+
+/* 日历网格 */
+#calendar-grid {
+    display: grid;
+    grid-template-columns: 180px repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-rows: 80px;
+    grid-gap: 1px;
+    background-color: #ccc;
+    /* 移除 margin-top */
+}
+
+.time-label {
+    background-color: #f0f0f0;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.day-header {
+    position: sticky; /* 使表头具有粘性定位 */
+    top: 0; /* 固定在可滚动容器的顶部 */
+    z-index: 10; /* 确保表头位于其他元素之上 */
+    background-color: #007bff; /* 保持现有背景颜色 */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.day-header .weather-info {
+    margin-top: 5px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day-header .weather-info i {
+    font-size: 24px; /* 增大图标尺寸 */
+    margin-bottom: 5px;
+}
+
+.time-slot {
+    background-color: #e0e0e0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 事件条样式 */
+.event {
+    position: absolute;
+    background-color: rgb(255, 170, 170);
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* 天气详情气泡 */
+.weather-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.weather-popup.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.weather-popup-content {
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-popup:hover {
+    color: red;
+}
+
+/* 白天时间格子的样式 */
+.time-slot.day-time {
+    background-color: #fffbe6; /* 淡黄色，表示白天 */
+    position: relative;
+}
+
+/* 夜间时间格子的样式 */
+.time-slot.night-time {
+    background-color: #e6f7ff; /* 淡蓝色，表示夜晚 */
+    position: relative;
+}
+
+/* 可选：为白天和黑夜添加图标 */
+.time-slot.day-time::after {
+    content: "\2600"; /* 太阳图标 */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+}
+
+.time-slot.night-time::after {
+    content: "\1F319"; /* 月亮图标 */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+}
+
+/* 时间格子的图标样式 */
+.time-slot-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+}
+
+/* 日出日落的分界线样式 */
+.sunrise-sunset-divider {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #0b0b0b; /* 可根据需要调整颜色 */
+    z-index: 3;
+}
